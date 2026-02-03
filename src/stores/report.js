@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia';
 
 // Use a simple fetch wrapper or axios. Using fetch for minimal dependencies.
-const API_URL = '/api';
+const BASE_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = `${BASE_URL}/api`;
 
 export const useReportStore = defineStore('report', {
     state: () => ({

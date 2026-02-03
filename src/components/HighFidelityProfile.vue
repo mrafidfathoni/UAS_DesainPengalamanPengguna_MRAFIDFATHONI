@@ -321,7 +321,8 @@ export default {
                 formData.append('photo', this.selectedFile);
             }
 
-            const response = await fetch(`/api/auth/profile/${id}`, {
+            const BASE_URL = import.meta.env.VITE_API_URL || '';
+            const response = await fetch(`${BASE_URL}/api/auth/profile/${id}`, {
                 method: 'PUT',
                 body: formData
             });
